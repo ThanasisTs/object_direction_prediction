@@ -1,0 +1,20 @@
+#!/bin/bash
+for file in /home/thanasis/MSC_AI/Machine_Learning/assignment/csvs/all_frames/MD/*
+do
+	python filter.py $file
+done
+
+for file in /home/thanasis/MSC_AI/Machine_Learning/assignment/csvs/all_frames/TT/*
+do
+	python filter.py $file
+done
+
+for file in /home/thanasis/MSC_AI/Machine_Learning/assignment/csvs/real_time/MD/*
+do
+	python filter.py $file
+done
+
+for file in /home/thanasis/MSC_AI/Machine_Learning/assignment/csvs/real_time/TT/*
+do
+	python filter.py $file
+done
