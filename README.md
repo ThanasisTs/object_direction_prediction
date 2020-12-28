@@ -15,3 +15,7 @@ An Openpose trajectory consists of x-y RGB pixels. The preprocessing procedure r
 (originated from frames in which the human wrist was not localized), outliers (originated from frames in which
 the human wrist was incorrectly localized) and redundant values (originated from frames in which the human was
 stasionary).
+
+<img src="https://github.com/ThanasisTs/object_direction_prediction/blob/main/openpose.png" width="800" height="400">
+<img src="https://github.com/ThanasisTs/object_direction_prediction/blob/main/keypoints.png" width="800" height="400">
+
