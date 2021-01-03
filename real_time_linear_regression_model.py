@@ -53,7 +53,7 @@ def update_graph(n_points):
 	train_res = w*np.array(data['x']) + b
 
 	# Visualize the training data and the fitted linear model
-	container = "w={}, b={}".format(round(w[0],4),round(b,2))
+	container = "Number of points:{} , w={}, b={}".format(n_points, round(w[0],4),round(b,2))
 	fig = go.Figure(data=[go.Scatter(x=data['x'], y=data['y'], mode='markers', name='Whole data'),
 						go.Scatter(x=data['x'][:n_points], y=data['y'][:n_points], mode='markers', name='Current data'),
 						go.Scatter(x=data['x'][:n_points], y=train_res, mode='lines', name='Linear Model')],
