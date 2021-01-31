@@ -1,14 +1,11 @@
-# Filter the Openpose trajectories
-# The script removes NaNs, outliers and redundant points corresponding to the beginning
-# and the end of the motion. 
+# Filter the OpenPose points
+# The script removes NaN values, outliers and static pixels 
+# corresponding to the beginning and the end of the motion. 
 
 import os
 import sys
 import numpy as np
 import pandas as pd
-import plotly
-import plotly.offline as py
-import plotly.graph_objects as go
 import csv
 
 x, y, time = {}, {}, {}
@@ -56,8 +53,8 @@ def clean(x, y, time):
 							print("Motion ended at sample %d" %i)
 							return x_motion, y_motion, time_motion
 
-# Parse the csv, call clean() and remove the redundant points at the end of the motion
-# (the removal at the end of the motin does NOT work in real-time)
+# Parse the csv, call clean() and remove the 
+# NaN values, outliers and static points
 def read_csv(file):
     global x, y, time 
     global x_clean, y_clean, time_clean 
@@ -86,8 +83,6 @@ read_csv(sys.argv[1])
 file = sys.argv[1].split('/')
 
 # Save a csv with the filtered motion
-# os.chdir("/home/thanasis/MSC_AI/Machine_Learning/assignment/csvs_clean/"+file[-3]+"/"+file[-2])
-# csv_name = open(sys.argv[1].split('/')[-1].split('.')[0]+'.csv', 'w')
 csv_name = open(sys.argv[1].split('.')[0]+"_clean.csv", 'w')
 wr = csv.writer(csv_name)
 wr.writerow(['x', 'y', 'time'])

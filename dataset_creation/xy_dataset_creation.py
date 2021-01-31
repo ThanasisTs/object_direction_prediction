@@ -2,11 +2,6 @@ import os
 import numpy as np
 import pandas as pd
 import csv
-import plotly
-import plotly.graph_objects as go
-import plotly.offline as py
-
-
 
 csv_file = open('all_frames.csv', 'w')
 wr = csv.writer(csv_file)
