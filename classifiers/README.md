@@ -16,7 +16,7 @@ Three classifiers were used for the prediction. Naive Bayes, Decision Tree and S
 
 ## Classification
 
-For each classifier we used the `KFold` function of `sklearn` to get different combinations of training and validation datasets. The number of splits was set to 10. To get the best instance for each classifier, we used the `accuracy_score` as a metric and chose the instance which resulted in the best accuracy. That instance was then used in the testing dataset.
+For each classifier we used the `KFold` function of `sklearn` to get different combinations of training and validation datasets. The number of splits was set to 10.
 
 ## Comparison
 To compare the three classifiers, we used the `accuracy_score` and the `confusion_matrix` metrics. The `accuracy_score` was used to compare the algorithms with respect to the time, namely at which time along the human motion the prediction exceeded a predetermined threshold. The `confustion_matrix` was used to observe the behaviour of the classifiers along each class.
