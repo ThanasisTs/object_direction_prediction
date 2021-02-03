@@ -5,8 +5,8 @@ Let us assume that there are 5 objects on a table and a human approaches one of 
 
 ## Files
 
-* data_collection: Description of the human data collection procedure and the human motion representation.
-* data_preprocessing: Preprocessing steps of the collected data.
-* dataset_creation: Creation of the datasets used in the training.
-* classifiers: Python implementation of the classifiers.
+* <b> data_collection:</b> Description of the human data collection procedure and the human motion representation.
+* <b> data_preprocessing:</b> Preprocessing steps of the collected data.
+* <b> dataset_creation:</b> Creation of the datasets used in the training.
+* <b> classifiers:</b> Python implementation of the classifiers.
 
