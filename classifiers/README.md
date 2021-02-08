@@ -28,12 +28,12 @@ To compare the three classifiers, we used the `accuracy_score` and the `confusio
 
 ## Brief results
 In the following figure, the accuracy scores for the 22Hz are shown
-<img src="https://github.com/ThanasisTs/object_direction_prediction/blob/main/classifiers/xy_classifiers/accuracy_real_time.png" >
+<img src="https://github.com/ThanasisTs/object_direction_prediction/blob/main/classifiers/xy_classifiers/figs/accuracy_real_time.png" >
 
 An accuracy of around 80% is achieved using Decision trees and Naive Bayes classifiers when 4 pixels are obtained. Taking into account the OpenPose frequency (22Hz), this indicates that a correct prediction with accuracy 80% is achieved approximately at the first 188ms of the human motion. SVM's performance is much more poor compared to the other two.
 
 In the following figure, the accuract scores for the 60Hz are shown
-<img src="https://github.com/ThanasisTs/object_direction_prediction/blob/main/classifiers/xy_classifiers/accuracy_all_frames.png">
+<img src="https://github.com/ThanasisTs/object_direction_prediction/blob/main/classifiers/xy_classifiers/figs/accuracy_all_frames.png">
 
 An accuracy of around 80% is achieved using Decision trees and Naive Bayes classifiers when 7 pixels are obtained. This indicates that a corrept predition with accuracy 80% is achieved approximately at the first 117ms of the human motion. SVM achieves such level of accuracy at 17 pixels or at 283ms.
 
