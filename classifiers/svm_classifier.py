@@ -20,20 +20,12 @@ avg_acc = [0.0 for i in range(num_points)]
 conf_matrix = [np.array([0 for i in range(25)]) for i in range(num_points)]
 conf_matrix = [i.reshape(5,5) for i in conf_matrix]
 
-parameters = {'kernel' : ('linear', 'rbf'), 'C' : [1, 10]}
 
 for train_index, test_index in kf.split(X):
 	X_train, X_test = X[train_index], X[test_index]
 	y_train, y_test = y[train_index], y[test_index]	
-	# st_x = StandardScaler()
-	# st_y = StandardScaler()
 
-	# X = st_x.fit_transform(X)
-	# y = st_y.fit_transform(y.reshape(-1,1))
-
-	# clf = SVC()
-	svc = SVC()
-	clf = GridSearchCV(svc, parameters)
+	clf = SVC(kernel='linear')
 	scores = {}
 	
 	for i in range(2, len(X_train[0])+1, 2):
@@ -47,14 +39,16 @@ for train_index, test_index in kf.split(X):
 			pass
 		avg_acc[i//2-1] += scores.get(i//2)/n_splits
 
+	# print(clf.best_params_)
+
 keys = [i for i in scores.keys()]
 print("Accuracy metric")
 print("Number of points | Accuracy")
 for k in range(len(scores.keys())):
 	print("{}     		 |    {}%".format(keys[k]*2,str(round(avg_acc[k],2))))
 
-# j=2
-# for i in conf_matrix:
-# 	print("Number of pixels: {}".format(j))
-# 	print(i)
-# 	j += 2
+j=2
+for i in conf_matrix:
+	print("Number of pixels: {}".format(j))
+	print(i)
+	j += 2
