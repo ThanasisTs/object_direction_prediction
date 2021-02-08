@@ -31,9 +31,9 @@ for train_index, test_index in kf.split(X):
 	# X = st_x.fit_transform(X)
 	# y = st_y.fit_transform(y.reshape(-1,1))
 
-	clf = SVC()
-	# svc = SVC()
-	# clf = GridSearchCV(svc, parameters)
+	# clf = SVC()
+	svc = SVC()
+	clf = GridSearchCV(svc, parameters)
 	scores = {}
 	
 	for i in range(2, len(X_train[0])+1, 2):
