@@ -55,4 +55,9 @@ The results indicate that SVM results in the highest accuracy. Furthermore, havi
 
 In the following figure, the confustion matrices of the SVM for one, 5 and 10 pixels for the `real_time` dataset are shown.
 
-<img src="https://github.com/ThanasisTs/object_direction_prediction/blob/main/learning/figs/accuracy/test/accuracy_all_frames.png">
+<img src="https://github.com/ThanasisTs/object_direction_prediction/blob/main/learning/figs/confusion_matrix/test/svm/real_time/1_pixels.png">
+<img src="https://github.com/ThanasisTs/object_direction_prediction/blob/main/learning/figs/confusion_matrix/test/svm/real_time/5_pixels.png">
+<img src="https://github.com/ThanasisTs/object_direction_prediction/blob/main/learning/figs/confusion_matrix/test/svm/real_time/10_pixels.png">
+
+We observe that as the number of available pixels increases, the prediction accuracy improves which was also shown from the accuracy scores. Furthermore, most misclassification occur in neighboring classes (placements in the real world) which was expected.
+
