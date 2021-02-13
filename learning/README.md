@@ -1,4 +1,4 @@
-# Prediction
+# Learning
 
 ## Training - Testing datasets
 
@@ -14,6 +14,8 @@ Three classifiers were used for the prediction: Naive Bayes, Decision Tree and S
 
 ## Experiments
 To simulate a real-time behaviour, we assumed that the pixels of a trajectory are not available at once but they are obtained over time. The prediction was made based on the number of available pixels. For that reason, a window of increasing length was considered and the number of pixels inside the window were considered the current feature vector.
+
+For example, when the first pixel was available the feature vector was [x0, y0], when the second one was obtained the feature vector was [x0, y0, x1, y1] and so on and so forth.
 
 ## Evaluation
 To compare the three classifiers, we used the `accuracy_score` and the `confusion_matrix` metrics. The `accuracy_score` was used to observe their overall performance and to compare the algorithms with respect to time, namely at which time during the human motion the prediction exceeded a predetermined threshold. The `confustion_matrix` was used to observe the behaviour of the classifiers along each class.
@@ -31,28 +33,26 @@ To compare the three classifiers, we used the `accuracy_score` and the `confusio
 We first present the results in the validation.
 
 In the following figure, the accuracy scores for the `real_time` dataset are shown
-<img src="https://github.com/ThanasisTs/object_direction_prediction/blob/main/classifiers/xy_classifiers/figs/accuracy_real_time.png" >
-
-An accuracy of around 80% is achieved using Decision trees and Naive Bayes classifiers when 4 pixels are obtained. Taking into account the OpenPose frequency (22Hz), this indicates that a correct prediction with accuracy 80% is achieved approximately at the first 188ms of the human motion. SVM achieves the same accuracy level at 3 pixels, indicating an 80% prediction at the first 136ms.
+<img src="https://github.com/ThanasisTs/object_direction_prediction/blob/main/learning/figs/accuracy/validation/accuracy_real_time.png" >
 
 In the following figure, the accuracy scores for the `all_frames` dataset are shown
-<img src="https://github.com/ThanasisTs/object_direction_prediction/blob/main/classifiers/xy_classifiers/figs/accuracy_all_frames.png">
+<img src="https://github.com/ThanasisTs/object_direction_prediction/blob/main/learning/figs/accuracy/validation/accuracy_all_frames.png">
 
-An accuracy of around 80% is achieved using Decision trees and Naive Bayes classifiers when 7 pixels are obtained. This indicates that a corrept predition with accuracy 80% is achieved approximately at the first 117ms of the human motion. SVM on the other hand achieves an accuracy of 90% at the first 5 pixels leading to an accuracy of that level at the first 83ms.
-
-The results indicate that SVM results in the highest accuracy. Furthermore, having available the pixels at 60Hz instead of 22Hz results in approximately 1.5 times faster prediction.
 
 ### Testing
 
 In the following figure, the accuracy scores for the `real_time` dataset are shown
-<img src="https://github.com/ThanasisTs/object_direction_prediction/blob/main/classifiers/xy_classifiers/figs/accuracy_real_time.png" >
+<img src="https://github.com/ThanasisTs/object_direction_prediction/blob/main/learning/figs/accuracy/test/accuracy_real_time.png" >
 
-An accuracy of around 80% is achieved using Decision trees and Naive Bayes classifiers when 4 pixels are obtained. Taking into account the OpenPose frequency (22Hz), this indicates that a correct prediction with accuracy 80% is achieved approximately at the first 188ms of the human motion. SVM achieves the same accuracy level at 3 pixels, indicating an 80% prediction at the first 136ms.
+An accuracy of around 85% is achieved using Decision trees and Naive Bayes classifiers when 4 pixels are obtained. Taking into account the OpenPose frequency (22Hz), this indicates that a correct prediction with accuracy 85% is achieved approximately at the first 188ms of the human motion. At the same time SVM achieves an accuracy level of over 90%.
 
 In the following figure, the accuracy scores for the `all_frames` dataset are shown
-<img src="https://github.com/ThanasisTs/object_direction_prediction/blob/main/classifiers/xy_classifiers/figs/accuracy_all_frames.png">
+<img src="https://github.com/ThanasisTs/object_direction_prediction/blob/main/learning/figs/accuracy/test/accuracy_all_frames.png">
 
-An accuracy of around 80% is achieved using Decision trees and Naive Bayes classifiers when 7 pixels are obtained. This indicates that a corrept predition with accuracy 80% is achieved approximately at the first 117ms of the human motion. SVM on the other hand achieves an accuracy of 90% at the first 5 pixels leading to an accuracy of that level at the first 83ms.
+An accuracy of around 85% is achieved using Decision trees and Naive Bayes classifiers when 6 pixels are obtained. This indicates that a corrept predition with accuracy 85% is achieved approximately at the first 100ms of the human motion. SVM on the other hand achieves an accuracy of 85% at the first 5 pixels leading to an accuracy of that level at the first 83ms.
 
-The results indicate that SVM results in the highest accuracy. Furthermore, having available the pixels at 60Hz instead of 22Hz results in approximately 1.5 times faster prediction.
+The results indicate that SVM results in the highest accuracy. Furthermore, having available the pixels at 60Hz instead of 22Hz results in approximately 0.8-1.2 times faster prediction.
 
+In the following figure, the confustion matrices of the SVM for one, 5 and 10 pixels for the `real_time` dataset are shown.
+
+<img src="https://github.com/ThanasisTs/object_direction_prediction/blob/main/learning/figs/accuracy/test/accuracy_all_frames.png">
