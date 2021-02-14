@@ -9,6 +9,7 @@ Let us assume that there are 5 objects on a table and a human approaches one of 
 * <b> data_preprocessing:</b> Preprocessing steps of the collected data.
 * <b> train_test_datasets:</b> Creation of the datasets used in the training and the testing. CSVs with the datasets.
 * <b> learning:</b> Python implementation of the training and testing procedure. Presentation of the results of the learning.
+* <b> ML_Presentation.pdf:</b> Pdf of the presentation.
 
 ## Python modules versions
 
