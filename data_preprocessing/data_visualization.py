@@ -37,12 +37,12 @@ def read_clean_csv(file):
 print("Give 'filter' as arg to visualize the filtered data, otherwist pass nothing")
 try:
     if sys.argv[1] == 'filter':
-        os.chdir('/home/thanasis/MSC_AI/Machine_Learning/data/csvs_clean/all_frames/TT') 
+        os.chdir('/home/thanasis/MSC_AI/Machine_Learning/ML/data/csvs_clean/all_frames/TT') 
         with os.scandir() as entries:
         	for entry in entries:
         		read_clean_csv(entry.name)
 except:
-    os.chdir('/home/thanasis/MSC_AI/Machine_Learning/data/csvs/all_frames/TT')
+    os.chdir('/home/thanasis/MSC_AI/Machine_Learning/ML/data/csvs/all_frames/TT')
     with os.scandir() as entries:
         for entry in entries:
             read_csv(entry.name)
