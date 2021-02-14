@@ -10,3 +10,11 @@ Let us assume that there are 5 objects on a table and a human approaches one of 
 * <b> dataset_creation:</b> Creation of the datasets used in the training and the testing.
 * <b> learning:</b> Python implementation of the training and testing procedure. Presentation of the results of the learning.
 
+## Python modules versions
+
+* numpy: 1.19.5
+* pandas: 1.1.4
+* sklearn: 0.0
+* seaborn: 0.11.0
+* matplotlib: 3.3.2
+* plotly: 4.14.1
