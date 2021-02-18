@@ -19,3 +19,6 @@ Let us assume that there are 5 objects on a table and a human approaches one of 
 * seaborn: 0.11.0
 * matplotlib: 3.3.2
 * plotly: 4.14.1
+
+## Acknowledgement
+The experiments regarding data collection were conducted in the [RoboSkel](https://github.com/Roboskel-Manipulation) laboratory. For any information regarding the datasets, please contact Thanasis Tsitos as thtsitos.gmail.com
